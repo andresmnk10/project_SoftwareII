@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.qos.logback.core.joran.util.beans.BeanUtil;
-import net.proyectoSoftwareII.Proyecto.models.reponses.UsersRest;
+import net.proyectoSoftwareII.Proyecto.models.reponses.UserRest;
 import net.proyectoSoftwareII.Proyecto.models.request.UserDetailRequestModel;
 import net.proyectoSoftwareII.Proyecto.shared.dto.UserDTO;
 
@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UsersRest createUser (@RequestBody UserDetailRequestModel userDetails){
+    public UserRest createUser (@RequestBody UserDetailRequestModel userDetails){
 
         UserRest userToReturn = new UserRest();
         
@@ -29,12 +29,12 @@ public class UserController {
 
         BeanUtils.copyProperties(userDetails, userDTO);
 
-        UserDTO createdUser = userService.createdUser(userDTO);
+        UserDTO createdUser = userService.createUser(userDTO);
         
         BeanUtils.copyProperties(createdUser, userToReturn);
          
 
-        return null;
+        return userToReturn;
     } 
 
   

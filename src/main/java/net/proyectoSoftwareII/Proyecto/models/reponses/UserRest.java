@@ -1,6 +1,6 @@
 package net.proyectoSoftwareII.Proyecto.models.reponses;
 
-public class UsersRest {
+public class UserRest {
 
     private String userId;
     private String firstName;
