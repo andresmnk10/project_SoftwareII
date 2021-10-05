@@ -1,5 +1,12 @@
 package net.proyectoSoftwareII.Proyecto.services;
 
-public class UserServiceInterface {
+import net.proyectoSoftwareII.Proyecto.shared.dto.UserDTO;
+
+public interface UserServiceInterface {
+
+    public UserDTO createUser (UserDTO userDTO);
+
+
+    
     
 }

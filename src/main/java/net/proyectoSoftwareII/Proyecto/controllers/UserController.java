@@ -1,19 +1,25 @@
 package net.proyectoSoftwareII.Proyecto.controllers;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ch.qos.logback.core.joran.util.beans.BeanUtil;
+
 import net.proyectoSoftwareII.Proyecto.models.reponses.UserRest;
 import net.proyectoSoftwareII.Proyecto.models.request.UserDetailRequestModel;
+import net.proyectoSoftwareII.Proyecto.services.UserServiceInterface;
 import net.proyectoSoftwareII.Proyecto.shared.dto.UserDTO;
 
 @RestController
 @RequestMapping ("/users")
 public class UserController {
+
+    @Autowired
+    UserServiceInterface userService;
+
 
     @GetMapping
     public String getUser (){
