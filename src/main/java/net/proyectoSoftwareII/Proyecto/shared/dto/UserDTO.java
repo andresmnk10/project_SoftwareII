@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class UserDTO implements Serializable   {
 
-    private static final Long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private long id;
     private String userId;
     private String firstName;
     private String lastName;
@@ -14,13 +14,14 @@ public class UserDTO implements Serializable   {
     private String password;
     private String encryptedPassword;
 
-    public static Long getSerialversionuid() {
+    
+    public static long getSerialversionuid() {
         return serialVersionUID;
     }
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getUserId() {

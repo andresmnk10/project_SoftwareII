@@ -7,38 +7,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import net.proyectoSoftwareII.Proyecto.models.reponses.UserRest;
 import net.proyectoSoftwareII.Proyecto.models.request.UserDetailRequestModel;
+import net.proyectoSoftwareII.Proyecto.models.reponses.UserRest;
 import net.proyectoSoftwareII.Proyecto.services.UserServiceInterface;
 import net.proyectoSoftwareII.Proyecto.shared.dto.UserDTO;
 
 @RestController
-@RequestMapping ("/users")
+@RequestMapping ("/users") //http://localhost:8080/users
 public class UserController {
 
     @Autowired
     UserServiceInterface userService;
 
 
-    @GetMapping
+    @GetMapping //obtener consultar informacion
     public String getUser (){
         return "Obtener usuarios";
     }
 
-    @PostMapping
-    public UserRest createUser (@RequestBody UserDetailRequestModel userDetails){
-
-        UserRest userToReturn = new UserRest();
+    @PostMapping //Creando informacion
+    public UserRest createUser(@RequestBody UserDetailRequestModel userDetails){
         
-        UserDTO userDTO = new UserDTO ();
+        UserRest userToReturn = new UserRest();
+
+        UserDTO userDTO = new UserDTO();
 
         BeanUtils.copyProperties(userDetails, userDTO);
 
         UserDTO createdUser = userService.createUser(userDTO);
-        
+
         BeanUtils.copyProperties(createdUser, userToReturn);
-         
 
         return userToReturn;
     } 

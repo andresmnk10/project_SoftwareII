@@ -12,33 +12,27 @@ import javax.persistence.Id;
 @Entity(name = "users")
 public class UserEntity implements Serializable {
 
-    private static final Long serialVersionUID = 1L;
-
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue
     private long id;
 
-    @Column( nullable = false)
+    @Column(nullable = false)
     private String userId;
-
-    @Column( nullable = false, length = 50)
+    
+    @Column(nullable = false, length = 50)
     private String firstName;
-
-    @Column( nullable = false, length = 50)
+    
+    @Column(nullable = false, length = 50)
     private String lastName;
 
-    @Column( nullable = false, length = 255)
+    @Column(nullable = false, length = 255)
     private String email;
 
-    @Column( nullable = false)
+    @Column(nullable = false)
     private String encryptedPassword;
 
-
-
-    public static Long getSerialversionuid() {
-        return serialVersionUID;
-    }
 
     public long getId() {
         return id;
@@ -86,7 +80,6 @@ public class UserEntity implements Serializable {
 
     public void setEncryptedPassword(String encryptedPassword) {
         this.encryptedPassword = encryptedPassword;
-    } 
-
+    }
     
 }

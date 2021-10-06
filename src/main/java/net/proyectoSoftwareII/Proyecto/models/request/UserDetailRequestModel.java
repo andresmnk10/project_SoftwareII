@@ -1,11 +1,12 @@
 package net.proyectoSoftwareII.Proyecto.models.request;
 
 public class UserDetailRequestModel {
+    
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-    
+
     public String getFirstName() {
         return firstName;
     }
@@ -31,6 +32,5 @@ public class UserDetailRequestModel {
         this.password = password;
     }
 
-    
     
 }
